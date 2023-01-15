@@ -279,6 +279,8 @@ int main(int argc, char **argv)
 
     if (event_tap_begin(&g_event_tap, (1 << kCGEventKeyDown) | (1 << kCGEventKeyUp), key_handler)) {
         table_init(&g_slot, 150, hash_slot, compare_slot);
+        CGSetLocalEventsSuppressionInterval(0.0f);
+        CGEnableEventStateCombining(false);
         CFRunLoopRun();
     }
 

@@ -14,7 +14,7 @@ BINS           = $(BUILD_PATH)/daebak
 all: clean $(BINS)
 
 install: BUILD_FLAGS=-std=c99 -Wall -DNDEBUG -O2 -fvisibility=hidden -mmacosx-version-min=11.0 -fno-objc-arc -arch x86_64 -arch arm64
-install: clean-build $(BINS)
+install: clean $(BINS)
 
 man:
 	asciidoctor -b manpage $(DOC_PATH)/daebak.asciidoc -o $(DOC_PATH)/daebak.1

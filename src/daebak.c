@@ -273,6 +273,8 @@ void event_tap_end(struct event_tap *event_tap)
     event_tap->handle = NULL;
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 int main(int argc, char **argv)
 {
     g_pid = getpid();
@@ -286,3 +288,4 @@ int main(int argc, char **argv)
 
     return EXIT_FAILURE;
 }
+#pragma clang diagnostic pop
